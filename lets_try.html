@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THE NEW LOADER</title>
+    <style>
+        #background
+        {
+            height:640px;
+            width:100%;
+           background-size: cover;
+           background-position: center;
+           /* background-color: peachpuff; */
+           background-image:url("adversting-architecture-buildings-1862000.jpg");
+        }
+        #start
+        {
+            height:10%;
+            width:20%;
+            background-color:black;
+            opacity:0.7;
+            font-size: 2rem;
+            color:white;
+            /* border:none; */
+            border-radius: 70px;
+            border-color: white;
+            border-width:3px;
+            font-family:arial;
+            margin-top: 10%;
+            margin-left: 40%;
+        }
+        #box
+        {
+            height:90px;
+            width: 200px;
+            background-color:black;
+            opacity:0.7;
+             z-index:3;
+             margin-top: 10%;
+            margin-left: 40%;
+            color:white;
+            font-family: Helvetica;
+            font-size:50px;
+            text-align: center;
+            padding-top: 0.5px;
+            visibility: hidden;
+       
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="background">
+        <button id="start">START</button>
+        <div id="box">
+           <h1>Loading</h1><br> 
+          </div>
+        
+    </div>
+    <script>
+        const start=document.getElementById("start");
+        const box=document.getElementById("box");
+        let add=' ';
+        let i=0;
+        function loader()
+        {
+               box.style.visibility='visible';
+            // box.innerHTML=str1;
+          
+            dots();
+            setInterval(dots,500);  
+           
+                
+            }
+            function dots()
+            {
+                let str1='.';
+               
+                i=i+1;
+               if(i==3)
+               {
+                   add=' ';
+                   i=0;
+               }  
+             
+                add=add.concat(str1);
+                    box.innerHTML=add;
+                
+            }
+        start.addEventListener('click',loader);
+
+        </script>
+</body>
+</html>
